@@ -1,0 +1,21 @@
+# Top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# 4 space indentation for C, C++, CSS, HTML, Python and Swift files
+[*.{c, cpp, css, h, html, py, swift}]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+# Maximum line length for Python files
+[*.py]
+max_line_length = 79
+
+# Tab indentation for Makefiles (no size specified)
+[Makefile]
+indent_style = tab
