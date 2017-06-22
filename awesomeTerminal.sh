@@ -17,7 +17,7 @@ open ~/Desktop/dotfiles/Solarized\ Dark.terminal
 
 # Get custom fonts
 git clone https://github.com/powerline/fonts ~/Desktop/fonts
-bash fonts/install.sh
+bash ~/Desktop/fonts/install.sh
 
 # Change default settings
 osascript ~/Desktop/dotfiles/changeTerminalSettings.scpt
