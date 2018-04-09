@@ -9,25 +9,27 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 # Get custom Prezto configuration
-git clone https://github.com/nonatomiclabs/dotfiles.git ~/Desktop/dotfiles
-yes | cp -rf ~/Desktop/dotfiles/.zpreztorc "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zpreztorc
+git clone https://github.com/nonatomiclabs/dotfiles.git ~/tmp-dotfiles
+yes | cp -rf ~/tmp-dotfiles/.zpreztorc "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zpreztorc
+yes | cp -rf ~/tmp-dotfiles/.zshrc "${ZDOTDIR:-$HOME}"/.zshrc
 
 # Import custom terminal theme
-open ~/Desktop/dotfiles/Solarized\ Dark.terminal
+open ~/tmp-dotfiles/Solarized\ Dark.terminal
 
 # Get custom fonts
-git clone https://github.com/powerline/fonts ~/Desktop/fonts
-bash ~/Desktop/fonts/install.sh
+git clone https://github.com/powerline/fonts ~/tmp-fonts
+bash ~/tmp-fonts/install.sh
 
 # Change default settings
-osascript ~/Desktop/dotfiles/changeTerminalSettings.scpt
+osascript ~/tmp-dotfiles/changeTerminalSettings.scpt
 
 # Remove temporary files
-rm -rf ~/Desktop/dotfiles
-rm -rf ~/Desktop/fonts
+rm -rf ~/tmp-dotfiles
+rm -rf ~/tmp-fonts
 
 # Change the default shell to zsh
 chsh -s /bin/zsh
 
-# Bind keypad keys
-echo '\n\n# Keypad\n# 0 . Enter\nbindkey -s "^[Op" "0"\nbindkey -s "^[Ol" "."\nbindkey -s "^[OM" "^M"\n# 1 2 3\nbindkey -s "^[Oq" "1"\nbindkey -s "^[Or" "2"\nbindkey -s "^[Os" "3"\n# 4 5 6\nbindkey -s "^[Ot" "4"\nbindkey -s "^[Ou" "5"\nbindkey -s "^[Ov" "6"\n# 7 8 9\nbindkey -s "^[Ow" "7"\nbindkey -s "^[Ox" "8"\nbindkey -s "^[Oy" "9"\n# + -  * /\nbindkey -s "^[Ok" "+"\nbindkey -s "^[Om" "-"\nbindkey -s "^[Oj" "*"\nbindkey -s "^[Oo" "/"' >> ~/.zshrc
+cd ~
+rm -rf ~/tmp-dotfiles
+rm -rf ~/tmp-fonts
