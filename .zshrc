@@ -36,3 +36,5 @@ export LESSOPEN='|~/.lessfilter %s'
 # Fix for the UTF-8 Python bug
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+export PATH=/usr/local/bin:$PATH
