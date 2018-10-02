@@ -32,3 +32,7 @@ alias cat='highlight -O xterm256 -l --force -s solarized-light'
 # Make "less" retain colors
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
+
+# Fix for the UTF-8 Python bug
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
