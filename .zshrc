@@ -37,4 +37,11 @@ export LESSOPEN='|~/.lessfilter %s'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
+
+# Enable Zsh highlighting - MUST BE THE LAST SOURCED ZSH PLUGIN
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 export PATH=/usr/local/bin:$PATH
