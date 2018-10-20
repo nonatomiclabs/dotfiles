@@ -41,6 +41,15 @@ export LANG=en_US.UTF-8
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
+# Expand aliases
+globalias() {
+   zle _expand_alias
+   zle expand-word
+   zle self-insert
+}
+zle -N globalias
+bindkey " " globalias
+
 # Enable Zsh highlighting - MUST BE THE LAST SOURCED ZSH PLUGIN
 source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
