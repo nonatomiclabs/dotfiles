@@ -54,7 +54,9 @@ bindkey " " globalias
 bindkey "^ " magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space # normal space during searches
 
-# Enable Zsh highlighting - MUST BE THE LAST SOURCED ZSH PLUGIN
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# No fancy prompt in VS Code's integrated terminal
+if [ "$RUN_IN_VS_CODE" -eq "1" ]; then
+    prompt minimal
+fi
 
 export PATH=/usr/local/bin:$PATH
