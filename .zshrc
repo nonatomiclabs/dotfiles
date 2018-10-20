@@ -43,12 +43,16 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
 # Expand aliases
 globalias() {
-   zle _expand_alias
-   zle expand-word
+   if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
+     zle _expand_alias
+     zle expand-word
+   fi
    zle self-insert
 }
 zle -N globalias
 bindkey " " globalias
+bindkey "^ " magic-space           # control-space to bypass completion
+bindkey -M isearch " " magic-space # normal space during searches
 
 # Enable Zsh highlighting - MUST BE THE LAST SOURCED ZSH PLUGIN
 source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
